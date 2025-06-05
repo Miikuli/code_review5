@@ -21,14 +21,12 @@ public interface IPoint extends Cloneable {
      * Устанавливает новые значения координат точки.
      * @param x новая координата X
      * @param y новая координата Y
-     * @throws IllegalArgumentException если координаты равны NaN
      */
     void setValue(double x, double y);
 
     /**
      * Создает и возвращает копию текущей точки.
      * @return клон текущей точки
-     * @throws CloneNotSupportedException если клонирование не поддерживается
      */
     IPoint clone() throws CloneNotSupportedException;
 

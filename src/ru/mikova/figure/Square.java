@@ -5,9 +5,9 @@ import ru.mikova.polyline.ClosedPolyline;
 
 /**
  * Задание 5.6. Замкнутый квадрат.
- Измените сущность Квадрат из задачи 2.4.4, таким образом, что бы она возвращала не обычную
- ломаную линию, а замкнутую ломаную линию из задачи 2.3.2. При этом сигнатура метода,
- возвращающую Ломаную, должна остаться без изменений.
+ * Измените сущность Квадрат из задачи 2.4.4, таким образом, что бы она возвращала не обычную
+ * ломаную линию, а замкнутую ломаную линию из задачи 2.3.2. При этом сигнатура метода,
+ * возвращающую Ломаную, должна остаться без изменений.
  */
 public class Square extends Figure {
     private Point topLeft;
@@ -17,15 +17,16 @@ public class Square extends Figure {
      * Создает новый квадрат.
      * @param topLeft левая верхняя точка квадрата
      * @param sideLength длина стороны квадрата
-     * @throws IllegalArgumentException если длина стороны не положительная
      */
     public Square(Point topLeft, double sideLength) {
         super(topLeft, "Квадрат");
         if (sideLength <= 0) {
-            throw new IllegalArgumentException("Длина стороны должна быть положительной");
+            System.err.println("Длина стороны должна быть положительной");
+            this.sideLength = 1.0; // Устанавливаем значение по умолчанию
+        } else {
+            this.sideLength = sideLength;
         }
         this.topLeft = topLeft;
-        this.sideLength = sideLength;
     }
 
     /**

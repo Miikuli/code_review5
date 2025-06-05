@@ -12,12 +12,11 @@ public class ClosedPolyline extends Polyline {
     /**
      * Создает новую замкнутую ломаную линию.
      * @param points массив точек, где первая и последняя точки должны совпадать
-     * @throws IllegalArgumentException если первая и последняя точки не совпадают
      */
     public ClosedPolyline(Point[] points) {
         super(points);
         if (!points[0].equals(points[points.length - 1])) {
-            throw new IllegalArgumentException("Первая и последняя точки должны совпадать для замкнутой ломаной.");
+            System.err.println("Первая и последняя точки должны совпадать для замкнутой ломаной.");
         }
     }
 

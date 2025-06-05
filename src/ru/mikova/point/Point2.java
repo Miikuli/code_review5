@@ -1,6 +1,5 @@
 package ru.mikova.point;
 
-
 /**
  * Задание 3.5 Трехмерная точка.
  * Создайте такой подвид сущности Точка из задачи 1.1.1, которая будет иметь не две, а три
@@ -19,12 +18,12 @@ public class Point2 extends Point {
      * @param x координата по оси X
      * @param y координата по оси Y
      * @param z координата по оси Z
-     * @throws IllegalArgumentException если любая из координат равна NaN
      */
     public Point2(double x, double y, double z) {
         super(x, y);
         if (Double.isNaN(z)) {
-            throw new IllegalArgumentException("Координата Z не может быть NaN");
+            System.err.println("Координата Z не может быть NaN");
+            return;
         }
         this.z = z;
     }
@@ -44,12 +43,12 @@ public class Point2 extends Point {
      * @param x новая координата X
      * @param y новая координата Y
      * @param z новая координата Z
-     * @throws IllegalArgumentException если любая из координат равна NaN
      */
     public void setValue(double x, double y, double z) {
         super.setValue(x, y);
         if (Double.isNaN(z)) {
-            throw new IllegalArgumentException("Координата Z не может быть NaN");
+            System.err.println("Координата Z не может быть NaN");
+            return;
         }
         this.z = z;
     }
@@ -58,7 +57,6 @@ public class Point2 extends Point {
      * Создает и возвращает копию текущей точки.
      *
      * @return клон текущей точки
-     * @throws CloneNotSupportedException если клонирование не поддерживается
      */
     @Override
     public Point2 clone() throws CloneNotSupportedException {

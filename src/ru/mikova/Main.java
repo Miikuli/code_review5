@@ -1,6 +1,6 @@
 package ru.mikova;
 
-import ru.mikova.TelephoneDirectory.TelephoneDirectory;
+import ru.mikova.telephone_directory.TelephoneDirectory;
 import ru.mikova.figure.Areas;
 import ru.mikova.figure.IShape;
 import ru.mikova.inputhandler.InputHandler;

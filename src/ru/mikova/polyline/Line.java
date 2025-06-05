@@ -15,11 +15,11 @@ public class Line {
      *
      * @param start начальная точка отрезка
      * @param end конечная точка отрезка
-     * @throws IllegalArgumentException если start или end равны null
      */
     public Line(Point start, Point end) {
         if (start == null || end == null) {
-            throw new IllegalArgumentException("Точки не могут быть null");
+            System.err.println("Точки не могут быть null");
+            return;
         }
         this.start = start;
         this.end = end;

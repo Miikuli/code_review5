@@ -14,11 +14,11 @@ public class Areas {
      *
      * @param shapes список геометрических фигур, реализующих интерфейс Shape
      * @return суммарная площадь всех фигур в списке
-     * @throws IllegalArgumentException если переданный список равен null
      */
     public static double totalArea(List<IShape> shapes) {
         if (shapes == null) {
-            throw new IllegalArgumentException("Список фигур не может быть null");
+            System.err.println("Список фигур не может быть null");
+            return 0;
         }
 
         double total = 0;

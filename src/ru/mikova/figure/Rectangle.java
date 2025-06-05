@@ -16,12 +16,12 @@ public class Rectangle extends Figure {
      * @param topLeftCorner левая верхняя точка прямоугольника
      * @param width ширина прямоугольника
      * @param height высота прямоугольника
-     * @throws IllegalArgumentException если ширина или высота не положительные
      */
     public Rectangle(Point topLeftCorner, double width, double height) {
         super(topLeftCorner, "Прямоугольник");
         if (width <= 0 || height <= 0) {
-            throw new IllegalArgumentException("Ширина и высота должны быть положительными");
+            System.err.println("Ширина и высота должны быть положительными");
+            return;
         }
         this.topLeftCorner = topLeftCorner;
         this.width = width;

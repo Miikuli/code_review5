@@ -14,12 +14,12 @@ public class Circle extends Figure {
      * Создает новый круг.
      * @param center центр круга
      * @param radius радиус круга
-     * @throws IllegalArgumentException если радиус не положительный
      */
     public Circle(Point center, double radius) {
         super(center, "Круг");
         if (radius <= 0) {
-            throw new IllegalArgumentException("Радиус должен быть положительным");
+            System.err.println("Радиус должен быть положительным");
+            return;
         }
         this.center = center;
         this.radius = radius;

@@ -19,11 +19,11 @@ public class Point implements IPoint, Cloneable {
      *
      * @param x координата по оси X
      * @param y координата по оси Y
-     * @throws IllegalArgumentException если координаты равны NaN
      */
     public Point(double x, double y) {
         if (Double.isNaN(x) || Double.isNaN(y)) {
-            throw new IllegalArgumentException("Координаты не могут быть NaN");
+            System.err.println("Координаты не могут быть NaN");
+            return;
         }
         this.x = x;
         this.y = y;
@@ -54,12 +54,12 @@ public class Point implements IPoint, Cloneable {
      *
      * @param x новая координата X
      * @param y новая координата Y
-     * @throws IllegalArgumentException если координаты равны NaN
      */
     @Override
     public void setValue(double x, double y) {
         if (Double.isNaN(x) || Double.isNaN(y)) {
-            throw new IllegalArgumentException("Координаты не могут быть NaN");
+            System.err.println("Координаты не могут быть NaN");
+            return;
         }
         this.x = x;
         this.y = y;
@@ -69,7 +69,6 @@ public class Point implements IPoint, Cloneable {
      * Создает и возвращает копию текущей точки.
      *
      * @return клон текущей точки
-     * @throws CloneNotSupportedException если клонирование не поддерживается
      */
     @Override
     public Point clone() throws CloneNotSupportedException {

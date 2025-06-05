@@ -18,7 +18,6 @@ public class Student {
      *
      * @param name имя студента
      * @param marks массив оценок студента (должны быть в диапазоне 2-5)
-     * @throws IllegalArgumentException если какая-либо оценка не в диапазоне 2-5
      */
     public Student(String name, int... marks) {
         checkMarks(marks);
@@ -30,12 +29,13 @@ public class Student {
      * Проверяет массив оценок на соответствие допустимому диапазону (2-5).
      *
      * @param marks массив оценок для проверки
-     * @throws IllegalArgumentException если какая-либо оценка не в диапазоне 2-5
      */
     public void checkMarks(int[] marks) {
         for (int mark : marks) {
-            if (mark < 2 || mark > 5)
-                throw new IllegalArgumentException("Оценка должна быть в диапазоне от 2 до 5.");
+            if (mark < 2 || mark > 5) {
+                System.err.println("Оценка должна быть в диапазоне от 2 до 5.");
+                return;
+            }
         }
     }
 
@@ -83,12 +83,12 @@ public class Student {
      *
      * @param n номер оценки для изменения (начиная с 1)
      * @param newMark новая оценка (должна быть в диапазоне 2-5)
-     * @throws IllegalArgumentException если новая оценка не в диапазоне 2-5
-     * @throws ArrayIndexOutOfBoundsException если указан неверный номер оценки
      */
     public void changeMark(int n, int newMark) {
-        if (newMark < 2 || newMark > 5)
-            throw new IllegalArgumentException("Оценка должна быть в диапазоне от 2 до 5.");
+        if (newMark < 2 || newMark > 5) {
+            System.err.println("Оценка должна быть в диапазоне от 2 до 5.");
+            return;
+        }
         this.marks[n-1] = newMark;
     }
 
@@ -98,8 +98,6 @@ public class Student {
      * Все новые оценки должны быть в допустимом диапазоне (2-5).
      *
      * @param newMarks новый массив оценок (должен быть той же длины и содержать оценки 2-5)
-     * @throws IllegalArgumentException если какая-либо новая оценка не в диапазоне 2-5
-     * @throws ArrayIndexOutOfBoundsException если новый массив другой длины
      */
     public void changeAllMarks(int[] newMarks) {
         checkMarks(newMarks);

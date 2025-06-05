@@ -1,4 +1,4 @@
-package ru.mikova.TelephoneDirectory;
+package ru.mikova.telephone_directory;
 
 /**
  * Интерфейс для телефонного справочника.

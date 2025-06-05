@@ -14,14 +14,15 @@ public class Polyline {
      * Создает новую ломаную линию из массива точек.
      *
      * @param points массив точек, образующих ломаную
-     * @throws IllegalArgumentException если массив точек null или содержит менее 2 точек
      */
     public Polyline(Point[] points) {
         if (points == null) {
-            throw new IllegalArgumentException("Массив точек не может быть null");
+            System.err.println("Массив точек не может быть null");
+            return;
         }
         if (points.length < 2) {
-            throw new IllegalArgumentException("Ломаная должна содержать минимум 2 точки");
+            System.err.println("Ломаная должна содержать минимум 2 точки");
+            return;
         }
         this.points = Arrays.copyOf(points, points.length);
     }
