@@ -55,7 +55,9 @@ public class Student {
      * @return средний балл студента (0 если нет оценок)
      */
     public double averageMark() {
-        if (marks.length == 0) return 0;
+        if (marks.length == 0) {
+            return 0;
+        }
         double sum = 0;
         for (int i = 0; i < marks.length; i++) {
             sum += marks[i];
@@ -70,9 +72,13 @@ public class Student {
      * @return true если все оценки равны 5, false в противном случае или если нет оценок
      */
     public boolean isExellent() {
-        if (marks.length == 0) return false;
+        if (marks.length == 0) {
+            return false;
+        }
         for (int mark : marks) {
-            if (mark != 5) return false;
+            if (mark != 5) {
+                return false;
+            }
         }
         return true;
     }
